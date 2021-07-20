@@ -1,5 +1,8 @@
 .thumb {
   width: 600px;
+  margin: 15px;
+  color: rgba(0, 0, 0, 0.63);
+  font-weight: bold;
 }
 
 .name {
@@ -10,17 +13,45 @@
 .feedback_thumb {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: left;
 }
 
 .feedback {
   border-radius: 3px;
-
+  outline: none;
   margin-right: 25px;
+  width: 70px;
+  height: 45px;
+}
+
+.feedback:hover,
+.feedback:focus {
+  background-color: rgba(8, 40, 49, 0.925);
+  color: cornsilk;
 }
 
 .statistics_thumb {
+  background-color: rgba(8, 40, 49, 0.062);
 }
 
-.statistics {
+.good {
+  color: rgb(30, 88, 30);
+}
+
+.neutral {
+  color: rgb(139, 139, 13);
+}
+
+.bad {
+  color: rgb(112, 30, 30);
+}
+
+.total {
+  font-size: 20px;
+}
+
+.positive {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgba(12, 54, 66, 0.925);
 }

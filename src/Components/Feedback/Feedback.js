@@ -1,13 +1,11 @@
 import React, { Component } from "react";
-import "./Feedback.module.css";
+import s from "./Feedback.module.css";
 
 class Feedback extends Component {
   state = {
     good: 0,
     neutral: 0,
     bad: 0,
-    // total: 0,
-    // positive: 0,
   };
 
   onGoodFeedback = () => {
@@ -44,28 +42,26 @@ class Feedback extends Component {
     const positive = this.countPositiveFeedbackPercentage(total, good);
 
     return (
-      <div className="thumb">
-        <h2 className="name">Please leave feedback</h2>
-        <div className="feedback_thumb">
-          <button className="feedback" onClick={this.onGoodFeedback}>
+      <div className={s.thumb}>
+        <h2 className={s.name}>Please leave feedback</h2>
+        <div className={s.feedback_thumb}>
+          <button className={s.feedback} onClick={this.onGoodFeedback}>
             Good
           </button>
-          <button className="feedback" onClick={this.onNeutralFeedback}>
+          <button className={s.feedback} onClick={this.onNeutralFeedback}>
             Neutral
           </button>
-          <button className="feedback" onClick={this.onBadFeedback}>
+          <button className={s.feedback} onClick={this.onBadFeedback}>
             Bad
           </button>
         </div>
-        <h2 className="name">Statistics</h2>
-        <div className="statistics_thumb">
-          <p className="statistics">Good: {good}</p>
-          <p className="statistics">Neutral: {neutral}</p>
-          <p className="statistics">Bad: {bad}</p>
-          <p className="statistics total">Total: {total}</p>
-          <p className="statistics positive">
-            Positive feedback: {positive || 0}%
-          </p>
+        <h2 className={s.name}>Statistics</h2>
+        <div className={s.statistics_thumb}>
+          <p className={s.good}>Good: {good}</p>
+          <p className={s.neutral}>Neutral: {neutral}</p>
+          <p className={s.bad}>Bad: {bad}</p>
+          <p className={s.total}>Total: {total}</p>
+          <p className={s.positive}>Positive feedback: {positive || 0}%</p>
         </div>
       </div>
     );
