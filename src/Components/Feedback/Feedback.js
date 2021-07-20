@@ -6,7 +6,8 @@ class Feedback extends Component {
     good: 0,
     neutral: 0,
     bad: 0,
-    total: 0,
+    // total: 0,
+    // positive: 0,
   };
 
   onGoodFeedback = () => {
@@ -27,12 +28,20 @@ class Feedback extends Component {
     });
   };
 
-  //   total =(prevState)=> {
-  //    return {total: this.state.good + this.state.neutral + this.state.bad};
-  //   }
+  countTotalFeedback = (good, neutral, bad) => {
+    const total = good + neutral + bad;
+    return total;
+  };
+
+  countPositiveFeedbackPercentage = (total, good) => {
+    const positive = Math.round((100 / total) * good);
+    return positive;
+  };
 
   render() {
     const { good, neutral, bad } = this.state;
+    const total = this.countTotalFeedback(good, neutral, bad);
+    const positive = this.countPositiveFeedbackPercentage(total, good);
 
     return (
       <div className="thumb">
@@ -50,19 +59,12 @@ class Feedback extends Component {
         </div>
         <h2 className="name">Statistics</h2>
         <div className="statistics_thumb">
-          <p className="statistics">Good: {this.state.good}</p>
-          <p className="statistics">Neutral: {this.state.neutral}</p>
-          <p className="statistics">Bad: {this.state.bad}</p>
-          <p className="statistics">
-            Total: {this.state.good + this.state.neutral + this.state.bad}
-          </p>
-          <p className="statistics">
-            Positive feedback:{" "}
-            {Math.round(
-              (100 / (this.state.good + this.state.neutral + this.state.bad)) *
-                this.state.good
-            )}
-            %
+          <p className="statistics">Good: {good}</p>
+          <p className="statistics">Neutral: {neutral}</p>
+          <p className="statistics">Bad: {bad}</p>
+          <p className="statistics total">Total: {total}</p>
+          <p className="statistics positive">
+            Positive feedback: {positive || 0}%
           </p>
         </div>
       </div>
