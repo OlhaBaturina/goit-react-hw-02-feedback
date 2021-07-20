@@ -1,0 +1,25 @@
+.thumb {
+  width: 600px;
+}
+
+.name {
+  font-size: 24px;
+  color: rgba(8, 40, 49, 0.925);
+}
+
+.feedback_thumb {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.feedback {
+  border-radius: 3px;
+  outline: cadetblue;
+}
+
+.statistics_thumb {
+}
+
+.statistics {
+}
