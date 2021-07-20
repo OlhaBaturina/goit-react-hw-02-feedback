@@ -15,7 +15,8 @@
 
 .feedback {
   border-radius: 3px;
-  outline: cadetblue;
+
+  margin-right: 25px;
 }
 
 .statistics_thumb {

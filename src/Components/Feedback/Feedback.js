@@ -6,6 +6,7 @@ class Feedback extends Component {
     good: 0,
     neutral: 0,
     bad: 0,
+    total: 0,
   };
 
   onGoodFeedback = () => {
@@ -26,7 +27,13 @@ class Feedback extends Component {
     });
   };
 
+  //   total =(prevState)=> {
+  //    return {total: this.state.good + this.state.neutral + this.state.bad};
+  //   }
+
   render() {
+    const { good, neutral, bad } = this.state;
+
     return (
       <div className="thumb">
         <h2 className="name">Please leave feedback</h2>
@@ -43,9 +50,20 @@ class Feedback extends Component {
         </div>
         <h2 className="name">Statistics</h2>
         <div className="statistics_thumb">
-          <button className="statistics">Good: {this.state.good}</button>
-          <button className="statistics">Neutral: {this.state.neutral}</button>
-          <button className="statistics">Bad: {this.state.bad}</button>
+          <p className="statistics">Good: {this.state.good}</p>
+          <p className="statistics">Neutral: {this.state.neutral}</p>
+          <p className="statistics">Bad: {this.state.bad}</p>
+          <p className="statistics">
+            Total: {this.state.good + this.state.neutral + this.state.bad}
+          </p>
+          <p className="statistics">
+            Positive feedback:{" "}
+            {Math.round(
+              (100 / (this.state.good + this.state.neutral + this.state.bad)) *
+                this.state.good
+            )}
+            %
+          </p>
         </div>
       </div>
     );
