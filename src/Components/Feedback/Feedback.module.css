@@ -10,12 +10,6 @@
   color: rgba(8, 40, 49, 0.925);
 }
 
-.feedback_thumb {
-  display: flex;
-  align-items: center;
-  justify-content: left;
-}
-
 .feedback {
   border-radius: 3px;
   outline: none;
