@@ -1,25 +1,18 @@
-.statistics_thumb {
-  background-color: rgba(8, 40, 49, 0.062);
+.TitleList {
+  margin-bottom: 15px;
+  padding: 2px;
+  text-align: center;
+  background-color: rgba(46, 67, 68, 0.432);
+  border-radius: 3px;
 }
 
-.good {
-  color: rgb(30, 88, 30);
+.TitleList p {
+  margin: 5px;
+  padding: 0;
 }
 
-.neutral {
-  color: rgb(139, 139, 13);
-}
-
-.bad {
-  color: rgb(112, 30, 30);
-}
-
-.total {
-  font-size: 20px;
-}
-
-.positive {
-  font-size: 20px;
-  font-weight: 500;
-  color: rgba(12, 54, 66, 0.925);
+.List {
+  list-style: none;
+  margin: 10;
+  padding: 0;
 }
